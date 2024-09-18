@@ -1,9 +1,9 @@
 package com.microservices.spring.repository;
 
-import com.microservices.spring.entity.Proposal;
+import com.microservices.spring.entity.Proposta;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface ProposalRepository extends CrudRepository<Proposal, Long> {
+public interface PropostaRepository extends CrudRepository<Proposta, Long> {
 }

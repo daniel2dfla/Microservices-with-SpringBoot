@@ -15,23 +15,23 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-public class Customer {
+public class Usuario {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String name;
+    private String nome;
 
-    private String lastName;
+    private String sobrenome;
 
     private String cpf;
 
-    private String cellphone;
+    private String telefone;
 
-    private Double rent;
+    private Double renda;
 
-    @OneToOne(mappedBy = "customer")
-    private Proposal proposal;
+    @OneToOne(mappedBy = "usuario")
+    private Proposta proposta;
 
 }
