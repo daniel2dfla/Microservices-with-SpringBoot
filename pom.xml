@@ -11,7 +11,7 @@
 	<groupId>com.pieropan</groupId>
 	<artifactId>proposta-app</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>proposal-app</name>
+	<name>proposta-app</name>
 	<description>Microservice responsible for registering proposals</description>
 	<properties>
 		<java.version>17</java.version>

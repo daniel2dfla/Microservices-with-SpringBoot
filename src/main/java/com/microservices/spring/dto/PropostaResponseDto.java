@@ -9,25 +9,25 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ProposalResponseDto {
+public class PropostaResponseDto {
 
     private Long id;
 
-    private String name;
+    private String nome;
 
-    private String lastName;
+    private String sobrenome;
 
-    private String cellphone;
+    private String telefone;
 
     private String cpf;
 
-    private Double rent;
+    private Double renda;
 
-    private Double requestedAmount;
+    private String valorSolicitadoFmt;
 
-    private int datePaymentLimit;
+    private int prazoPagamento;
 
-    private Boolean approved;
+    private Boolean aprovado;
 
-    private String observation;
+    private String observacao;
 }

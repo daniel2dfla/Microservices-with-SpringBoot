@@ -1,5 +1,5 @@
 server:
-  port: 8090
+  port: 8080
 
 spring:
   datasource:
@@ -14,3 +14,9 @@ spring:
     properties:
       hibernate:
         dialect: org.hibernate.dialect.PostgreSQLDialect
+  logging:
+    level:
+      org.springframework.web: DEBUG
+
+  property:
+    propostapendente: "proposta-pendente.ex"

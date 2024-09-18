@@ -9,19 +9,19 @@ import lombok.Setter;
 @NoArgsConstructor
 @Getter
 @Setter
-public class ProposalRequestDto {
+public class PropostaRequestDto {
 
-    private String name;
+    private String nome;
 
-    private String lastName;
+    private String sobrenome;
 
-    private String cellphone;
+    private String telefone;
 
     private String cpf;
 
-    private Double rent;
+    private Double renda;
 
-    private Double requestedAmount;
+    private Double valorSolicitado;
 
-    private int datePaymentLimit;
+    private int prazoPagamento;
 }
