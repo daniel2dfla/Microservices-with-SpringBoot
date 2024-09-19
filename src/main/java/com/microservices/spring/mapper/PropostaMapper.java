@@ -22,7 +22,7 @@ public interface PropostaMapper {
     @Mapping(target = "usuario.cpf", source = "cpf")
     @Mapping(target = "id", ignore = true)
     @Mapping(target = "aprovado", ignore = true)
-    @Mapping(target = "integrada", ignore = true)
+    @Mapping(target = "integrada", constant = "true")
     @Mapping(target = "observacao", ignore = true)
     Proposta convertDtoToProposta(PropostaRequestDto propostaRequestDto);
 
