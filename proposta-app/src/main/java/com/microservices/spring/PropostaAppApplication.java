@@ -6,10 +6,10 @@ import org.springframework.scheduling.annotation.EnableScheduling;
 
 @SpringBootApplication
 @EnableScheduling
-public class ProposalAppApplication {
+public class PropostaAppApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProposalAppApplication.class, args);
+		SpringApplication.run(PropostaAppApplication.class, args);
 	}
 
 }
