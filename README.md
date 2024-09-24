@@ -52,7 +52,7 @@ O objetivo é criar um projeto de microsserviços que atravéz de dados de créd
 ### Pré requisitos para rodar o projeto
 - Antes de começar, você vai precisar ter instalado em sua máquina as seguintes ferramentas:
   [Java](https://www.java.com/pt-BR/), [docker desktop](https://docs.docker.com/desktop/install/windows-install/), [DBeaver](https://dbeaver.io/download/), [Postgres](https://www.postgresql.org/)
-- Importante destacar que para rodar o microsserviço de notificação é necessário ter as credenciais da AWS salvas no PATH do seu computador.
+- Importante destacar que para rodar o microsserviço de notificação é necessário ter as credenciais da AWS salvas no PATH(variaveis de ambientes) do seu computador.
 - Dê um clone no projeto e roda o maven.
 - Com o docker desktop aberto, use o comando " docker-compose up --build -d "
 - Agora é só rodar cada projeto, lembrando que o RabbitMQ esta rodando na porta 15672 e a imagem do front na porta 80.
