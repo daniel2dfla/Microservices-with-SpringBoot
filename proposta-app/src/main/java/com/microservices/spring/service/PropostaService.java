@@ -14,36 +14,37 @@ import java.util.List;
 public class PropostaService {
 
     private final PropostaRepository propostaRepository;
+
     private final NotificacaoRabbitService notificacaoRabbitService;
 
     private final String exchange;
 
     public PropostaService(PropostaRepository propostaRepository,
-                           @Value("${spring.property.propostapendente}") String exchange,
-                           NotificacaoRabbitService notificacaoRabbitService) {
+                           NotificacaoRabbitService notificacaoRabbitService,
+                           @Value("${rabbitmq.propostapendente.exchange}") String exchange) {
         this.propostaRepository = propostaRepository;
-        this.exchange = exchange;
         this.notificacaoRabbitService = notificacaoRabbitService;
+        this.exchange = exchange;
     }
 
-    public PropostaResponseDto criar(PropostaRequestDto propostaRequestDto) {
-        Proposta proposta = PropostaMapper.INSTANCE.convertDtoToProposta(propostaRequestDto);
+    public PropostaResponseDto criar(PropostaRequestDto requestDto) {
+        Proposta proposta = PropostaMapper.INSTANCE.convertDtoToProposta(requestDto);
         propostaRepository.save(proposta);
 
         notificarRabbitMQ(proposta);
-        return PropostaMapper.INSTANCE.convertPropostaToDto(proposta);
+
+        return PropostaMapper.INSTANCE.convertEntityToDto(proposta);
     }
 
     private void notificarRabbitMQ(Proposta proposta) {
         try {
             notificacaoRabbitService.notificar(proposta, exchange);
         } catch (RuntimeException ex) {
-            proposta.setIntegrada(false);
-            propostaRepository.save(proposta);
+            propostaRepository.atualizarStatusIntegrada(proposta.getId(), false);
         }
     }
 
-    public List<PropostaResponseDto> getProposta() {
-        return PropostaMapper.INSTANCE.convertLstEntityToListDto(propostaRepository.findAll());
+    public List<PropostaResponseDto> obterProposta() {
+        return PropostaMapper.INSTANCE.convertListEntityToListDto(propostaRepository.findAll());
     }
 }
