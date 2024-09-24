@@ -1,4 +1,4 @@
-package com.microservice.notifacao.domain;
+package com.microservice.analisecredito.domain;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -15,7 +15,7 @@ public class Proposta {
 
     private Boolean aprovada;
 
-    private Boolean integrada;
+    private boolean integrada;
 
     private String observacao;
 

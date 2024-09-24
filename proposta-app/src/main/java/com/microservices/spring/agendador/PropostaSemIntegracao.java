@@ -1,6 +1,5 @@
 package com.microservices.spring.agendador;
 
-import com.microservices.spring.entity.Proposta;
 import com.microservices.spring.repository.PropostaRepository;
 import com.microservices.spring.service.NotificacaoRabbitService;
 import org.slf4j.Logger;
@@ -24,26 +23,21 @@ public class PropostaSemIntegracao {
 
     public PropostaSemIntegracao(PropostaRepository propostaRepository,
                                  NotificacaoRabbitService notificacaoRabbitService,
-                                 @Value("${spring.property.propostapendente}") String exchange) {
+                                 @Value("${rabbitmq.propostapendente.exchange}") String exchange) {
         this.propostaRepository = propostaRepository;
         this.notificacaoRabbitService = notificacaoRabbitService;
         this.exchange = exchange;
     }
 
     @Scheduled(fixedDelay = 10, timeUnit = TimeUnit.SECONDS)
-    public void buscarPropostaSemSintegracao() {
+    public void buscarPropostasSemIntegracao() {
         propostaRepository.findAllByIntegradaIsFalse().forEach(proposta -> {
             try {
                 notificacaoRabbitService.notificar(proposta, exchange);
-                atualizarProposta(proposta);
-            } catch (RuntimeException ex){
+                propostaRepository.atualizarStatusIntegrada(proposta.getId(), true);
+            } catch (RuntimeException ex) {
                 logger.error(ex.getMessage());
             }
         });
-    }
-
-    private void atualizarProposta(Proposta proposta) {
-            proposta.setIntegrada(true);
-            propostaRepository.save(proposta);
     }
 }
