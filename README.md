@@ -19,29 +19,44 @@ O objetivo é criar um projeto de microsserviços que atravéz de dados de créd
  
 ### Evidencias
 - Solicitação do empréstimo solicitada pelo usuário.
-<img src="https://github.com/daniel2dfla/Microservices-with-SpringBoot/blob/main/img/SolicitacaoProposta.png" width="500"  alt="Solicitação do emprestimo">
+<p align="center">
+  <img src="https://github.com/daniel2dfla/Microservices-with-SpringBoot/blob/main/img/SolicitacaoProposta.png" width="500" alt="Nest Logo" />
+</p>
 
 - Resultado da solicitação (baseado em dados aleatório do score).
-<img src="https://github.com/daniel2dfla/Microservices-with-SpringBoot/blob/main/img/Resultado.png" width="900"  alt="Resultado">
+<p align="center">
+<img src="https://github.com/daniel2dfla/Microservices-with-SpringBoot/blob/main/img/Resultado.png" width="900" align="center" alt="Resultado">
+</p>
 
 - Detalhe da resposta respondida pelo sistema.
+<p align="center">
 <img src="https://github.com/daniel2dfla/Microservices-with-SpringBoot/blob/main/img/DetalheDoResultado.png" width="900"  alt="Detalhe do resultado">
+</p>
 
 - Persistência dos dados no banco de dados PostgreSQL.
+<p align="center">
 <img src="https://github.com/daniel2dfla/Microservices-with-SpringBoot/blob/main/img/PersistenciaDB.png" width="900"  alt="Detalhe do resultado">
+</p>
 
 - Exchanges criadas no RabbitMQ.
+<p align="center">
 <img src="https://github.com/daniel2dfla/Microservices-with-SpringBoot/blob/main/img/Exchanges.png" width="500"  alt="Detalhe do resultado">
+</p>
 
 - Queues criadas como solicitado.
+<p align="center">
 <img src="https://github.com/daniel2dfla/Microservices-with-SpringBoot/blob/main/img/Queues.png" width="700"  alt="Detalhe do resultado">
+</p>
 
 - SMS recebido.
+<p align="center">
 <img src="https://github.com/daniel2dfla/Microservices-with-SpringBoot/blob/main/img/SMS.jpg" width="200"  alt="Detalhe do resultado">
+</p>
 
 - Valores gastos com serviços SMS, pela AWS (em ambiente de estudos ainda sim tem gastos, é importante se atentar com isso e gerar uma prévia de gastos para serviços mais robustos).
+<p align="center">
 <img src="https://github.com/daniel2dfla/Microservices-with-SpringBoot/blob/main/img/TaxaAWS.png" width="600"  alt="Detalhe do resultado">
-
+</p>
 ### Tecnologias utilizadas
 - Java / SpringBoot
 - RabbitMQ
